@@ -1,1 +1,1 @@
-var ToDoApp = angular.module('ToDoApp', []);
+var TodoApp = angular.module('TodoApp', ['ngResource']);

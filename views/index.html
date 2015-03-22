@@ -3,12 +3,25 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.js"></script>
   </head>
 
   <body ng-controller="ToDoAppController">
+
+    <main>
+
+        <input id="todoNotepad" type="text" name="todoTask">
+      <!-- for each task into the task array, do list element -->
+      <ul id="list of tasks">
+        <li ng-repeat="task for todoList">
+        <input type="checkbox">
+        
+      </ul>
+
+    </main>
 
   <script src="../public/app.js"></script>
   <script src="../public/controller/angularController.js"></script>

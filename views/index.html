@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ToDo">
+<html lang="en" ng-app="TodoApp">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
@@ -9,16 +9,16 @@
     <script src="../bower_components/angular-resource/angular-resource.js"></script>
   </head>
 
-  <body ng-controller="ToDoAppController">
+  <body>
 
-    <main>
-
+    <main ng-controller="TodoAppController">
+      <div class="todoTaskForm" ng-keypress="key.keyPress()">
         <input id="todoNotepad" type="text" name="todoTask">
+      </div>
       <!-- for each task into the task array, do list element -->
       <ul id="list of tasks">
-        <li ng-repeat="task for todoList">
+        <li ng-repeat="task in todoList">{{ task.text }}</li>
         <input type="checkbox">
-        
       </ul>
 
     </main>

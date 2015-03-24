@@ -17,19 +17,17 @@ describe('TodoAppController', function() {
   });
 
   it('should add a task', function() {
+    var $event;
+
     scope.todoTask = 'testing... 1, 2, 3';
-    scope.key = 13;
     scope.addTask();
     expect(scope.todoList[0].text).toEqual('testing... 1, 2, 3');
     expect(scope.todoTask).toEqual('');
   });
 
-  it('should tick off a completed taks', function() {
-    scope.todoTask = 'testing...1, 2, 3';
-    scope.keyPress();
-    scope.addTask();
-    scope.toggleTick();
-    expect(scope.todoTask.done).toEqual(true)
+  it('should check if a task is completed', function() {
+    scope.todoTask = 'testing... 1, 2, 3';
+    scope.key = 13;
   }); 
 
 });

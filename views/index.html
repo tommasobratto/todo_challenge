@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="TodoApp">
   <head>
+    <title>TODO</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
   </head>
 
   <body>
 
     <main ng-controller="TodoAppController">
-      <div class="todoTaskForm" ng-keypress="key.keyPress()">
-        <input id="todoNotepad" type="text" name="todoTask">
-      </div>
+      <form class="todoForm" ng-submit="addTask()">
+          <input id="todoNotepad" type="text" name="todoTask">
+          <button type="submit" value="add"></button>
+      </form>
       <!-- for each task into the task array, do list element -->
       <ul id="list of tasks">
-        <li ng-repeat="task in todoList">{{ task.text }}</li>
-        <input type="checkbox">
+        <li ng-repeat="task in todoList">
+        {{task.text}}
+        <input id="done" type="checkbox" ng-toggle="toggleDone">
+        </li>
       </ul>
 
     </main>
 
-  <script src="../public/app.js"></script>
-  <script src="../public/controller/angularController.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/angularController.js"></script>
   </body>
 </html>

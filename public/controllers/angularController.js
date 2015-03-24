@@ -8,7 +8,7 @@ TodoApp.controller('TodoAppController', function($scope) {
     if($scope.todoTask) {
       $scope.todoList.push({text: $scope.todoTask, done: false});
       $scope.todoTask = '';
-      console.log($scope.todoList)
+      console.log($scope.todoList);
     }
   };
 
@@ -17,7 +17,7 @@ TodoApp.controller('TodoAppController', function($scope) {
     $('#done').css({
         'color': 'grey',
         'text-decoration': 'line-through'
-      })
-    console.log('toggled')
+      });
+    console.log('toggled');
     }; 
 });
